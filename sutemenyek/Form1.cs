@@ -12,9 +12,29 @@ namespace sutemenyek
 {
     public partial class Form1 : Form
     {
+        public string filePath;
+
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void fileMenu_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileopener = new OpenFileDialog();
+            fileopener.ShowDialog();
+            filePath = fileopener.FileName;
+            if (filePath != "")
+            {
+                sutikMenu.Enabled = true;
+                label1.Text = "mukodnie kene";
+            }
+        }
+
+        private void sutikMenu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
